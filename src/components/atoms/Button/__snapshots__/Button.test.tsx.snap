@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class=" buttonStyle"
+  >
+    buttonValue
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Button /> when glyph className specified should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="material-icons buttonStyle className"
+  >
+    buttonValue
+  </div>
+</DocumentFragment>
+`;

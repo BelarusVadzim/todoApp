@@ -1,0 +1,28 @@
+@import "src/variables.scss";
+
+.radioButton {
+  /* HIDE RADIO */
+  [type="radio"] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* NORMAL STYLES */
+  [type="radio"] + span {
+    cursor: pointer;
+    color: $secondary-font-color;
+    font-size: inherit;
+    font-family: $main-font;
+  }
+
+  [type="radio"] + span:hover {
+    color: $primary-font-color;
+  }
+
+  /* CHECKED STYLES */
+  [type="radio"]:checked + span {
+    color: $primary-color;
+  }
+}

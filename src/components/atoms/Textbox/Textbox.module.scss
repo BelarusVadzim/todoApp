@@ -1,0 +1,13 @@
+@import "src/variables.scss";
+
+.textbox {
+  font-size: $font-size;
+  color: $primary-font-color;
+  font-family: $main-font;
+  caret-color: $primary-color;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+  display: flex;
+}

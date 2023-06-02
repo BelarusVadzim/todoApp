@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoTemplate /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="backgroundStyle"
+  />
+  <div
+    class="backgroudImageStyle"
+  />
+  <div
+    class="pageStyle"
+  >
+    <div
+      class="mainStyle"
+    >
+      <div>
+        TodoList
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

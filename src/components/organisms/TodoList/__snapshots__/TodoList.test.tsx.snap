@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoList /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="todoListStyle"
+  >
+    <div
+      class="todoTtitleStyle"
+    >
+      TODO
+    </div>
+    <div
+      class="noteEditorStyle"
+    />
+    <div
+      class="listContainerStyle"
+    >
+      <div>
+        ScrolableSection
+      </div>
+      <div>
+        TodoItemsListMenu
+      </div>
+    </div>
+    <div>
+      TodoListFooter
+    </div>
+  </div>
+</DocumentFragment>
+`;

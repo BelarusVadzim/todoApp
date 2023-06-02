@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoteEditor /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="noteEditorStyle "
+  >
+    <div
+      class="leftFieldStyle"
+    />
+    <input
+      type="text"
+    />
+    <div
+      class="rightFieldStyle"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<NoteEditor /> when className specified should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="noteEditorStyle extraClass"
+  >
+    <div
+      class="leftFieldStyle"
+    />
+    <input
+      type="text"
+    />
+    <div
+      class="rightFieldStyle"
+    />
+  </div>
+</DocumentFragment>
+`;

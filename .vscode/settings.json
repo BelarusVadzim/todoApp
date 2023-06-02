@@ -1,0 +1,9 @@
+{
+    "scss.lint.validProperties": [
+        "composes"
+    ],
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}

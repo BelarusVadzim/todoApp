@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> should render properly 1`] = `
+<DocumentFragment>
+  <label
+    class="undefined className"
+  >
+    <input
+      name="groupName"
+      type="radio"
+      value="value33"
+    />
+    <span>
+      LabelChild
+    </span>
+  </label>
+</DocumentFragment>
+`;
