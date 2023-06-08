@@ -14,7 +14,10 @@ const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
     keyboardEventArg: KeyboardEvent<HTMLInputElement>
   ) => {
     if (EnterKey === keyboardEventArg.key) {
-      if (onReturn) onReturn(keyboardEventArg.currentTarget.value);
+      if (onReturn) {
+        onReturn(keyboardEventArg.currentTarget.value);
+      }
+
       setText('');
     }
   };

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import style from './Button.module.scss';
 import { PropsWithClassName } from 'types';
 
@@ -14,10 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   glyph,
   className,
 }) => {
-  let combinedClasses = useMemo(
-    () => `${glyph ? 'material-icons' : ''} ${style.button}`,
-    [glyph]
-  );
+  let combinedClasses = `${glyph ? 'material-icons' : ''} ${style.button}`;
 
   //ToDo: put in separated function
   combinedClasses = className
