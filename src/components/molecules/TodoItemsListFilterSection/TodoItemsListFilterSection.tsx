@@ -24,10 +24,7 @@ const TodoItemsListFilterSection: React.FC<PropsWithClassName> = ({
       <RadioButton className={style.radioButton} {...activeRadioButtonProps}>
         Active
       </RadioButton>
-      <RadioButton
-        className={style.radioButton}
-        {...completedRadioButtonProps}
-      >
+      <RadioButton className={style.radioButton} {...completedRadioButtonProps}>
         Completed
       </RadioButton>
     </div>

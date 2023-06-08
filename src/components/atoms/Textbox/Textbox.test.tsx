@@ -28,8 +28,7 @@ describe('<Textbox />', () => {
   it('when text typed witn out Enter key should call expected functions with expected values', () => {
     const onReturnHandler = jest.fn();
     const typedText = 'typedText';
-    render(<Textbox 
-      onReturn={onReturnHandler} />);
+    render(<Textbox onReturn={onReturnHandler} />);
 
     const inputElement = screen.getByRole('textbox');
 
@@ -42,9 +41,8 @@ describe('<Textbox />', () => {
   it('when Enter key entered should call expected functions with expected values', () => {
     const onReturnHandler = jest.fn();
     const typedText = 'typedText';
-    
-    render(<Textbox 
-      onReturn={onReturnHandler} />);
+
+    render(<Textbox onReturn={onReturnHandler} />);
 
     const inputElement = screen.getByRole('textbox');
 

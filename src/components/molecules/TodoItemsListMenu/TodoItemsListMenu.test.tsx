@@ -7,7 +7,7 @@ const dispatchCompletedTodosDeleted = jest.fn();
 const clearCompletedButtonTestId = 'clear-completed-button-test-id';
 const todo1 = { text: 'todo1' };
 const todo2 = { text: 'todo2' };
-const todos: TodoNote[] = [ todo1, todo2];
+const todos: TodoNote[] = [todo1, todo2];
 
 jest.mock('./TodoItemsListMenu.module.scss', () => ({
   todoItemsListMenu: 'todoItemsListMenuStyle',
@@ -18,29 +18,29 @@ jest.mock('./TodoItemsListMenu.module.scss', () => ({
 
 jest.mock('hooks', () => ({
   useTodoStateService: () => ({ todos, dispatchCompletedTodosDeleted }),
-}),
-);
+}));
 
 jest.mock('components/atoms', () => ({
-  Label: jest.fn(({ className, children }) =>  {
-    return (
-      <div className={className}>{children}</div>);
+  Label: jest.fn(({ className, children }) => {
+    return <div className={className}>{children}</div>;
   }),
-  Button: jest.fn(({ value, className, onClick }) =>  {
+  Button: jest.fn(({ value, className, onClick }) => {
     return (
-      <div data-testid={clearCompletedButtonTestId}  className={className} onClick={onClick}>
+      <div
+        data-testid={clearCompletedButtonTestId}
+        className={className}
+        onClick={onClick}
+      >
         {value}
-      </div>);
+      </div>
+    );
   }),
 }));
 
 jest.mock('../TodoItemsListFilterSection', () => ({
-  TodoItemsListFilterSection: jest.fn(({ className }) =>  {
-    return (
-      <div className={className} />);
+  TodoItemsListFilterSection: jest.fn(({ className }) => {
+    return <div className={className} />;
   }),
-
-  
 }));
 
 afterEach(() => {
@@ -60,7 +60,7 @@ describe('<TodoItemsListMenu />', () => {
     const inputElement = screen.getByTestId(clearCompletedButtonTestId);
 
     userEvent.click(inputElement);
-    
+
     expect(dispatchCompletedTodosDeleted).toBeCalledTimes(1);
   });
 });

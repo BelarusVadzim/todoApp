@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   let combinedClasses = useMemo(
     () => `${glyph ? 'material-icons' : ''} ${style.button}`,
-    [glyph],
+    [glyph]
   );
 
   //ToDo: put in separated function

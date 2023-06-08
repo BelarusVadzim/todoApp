@@ -1,8 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  readyInitializeTodoState,
-  todosUpdated,
-} from 'store/thunks';
+import { readyInitializeTodoState, todosUpdated } from 'store/thunks';
 import { TodoNote } from 'types';
 
 type TodoState = {

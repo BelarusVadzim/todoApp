@@ -4,7 +4,7 @@ import SortableSection from './SortableSection';
 
 const todo1 = { text: 'todo1' };
 const todo2 = { text: 'todo2' };
-const todos: TodoNote[] = [ todo1, todo2];
+const todos: TodoNote[] = [todo1, todo2];
 
 jest.mock('hooks', () => ({
   useTodoStateService: () => ({
@@ -13,8 +13,8 @@ jest.mock('hooks', () => ({
 }));
 
 jest.mock('../SortableTodoItem', () => ({
-  SortableTodoItem: jest.fn(({ note }: { key: string, note: TodoNote }) =>  {
-    return (<div>{note.text}</div>);
+  SortableTodoItem: jest.fn(({ note }: { key: string; note: TodoNote }) => {
+    return <div>{note.text}</div>;
   }),
 }));
 

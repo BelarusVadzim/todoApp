@@ -11,12 +11,12 @@ const appInitialized = true;
 const maxTodoNoteId = 3;
 const todoNote1: TodoNote = { id: 1, text: 'todoNote1', done: true };
 const todoNote2: TodoNote = { id: 2, text: 'todoNote2', done: false };
-const todoNote3: TodoNote = { id: maxTodoNoteId, text: 'todoNote3', done: false };
-const todos = [
-  todoNote1,
-  todoNote2,
-  todoNote3,
-];
+const todoNote3: TodoNote = {
+  id: maxTodoNoteId,
+  text: 'todoNote3',
+  done: false,
+};
+const todos = [todoNote1, todoNote2, todoNote3];
 
 let useAppDispatchMock: jest.Mock;
 let useAppSelectorMock: jest.Mock;
@@ -28,9 +28,10 @@ let appDispatchMock = jest.fn();
 let getMaxTodoIdMock: jest.Mock;
 
 const initState = (
-  todoNotes: TodoNote[], 
-  filterValue: string, 
-  appInitializedValue: boolean): RootState =>({
+  todoNotes: TodoNote[],
+  filterValue: string,
+  appInitializedValue: boolean
+): RootState => ({
   todo: { todos: todoNotes },
   application: {
     appInitialized: appInitializedValue,
@@ -79,7 +80,8 @@ describe('useTodoStateService', () => {
   it('dispatchReadyInitializeTodoState should call expected function with expected value', () => {
     const { result } = renderHook(useTodoStateService);
 
-    const dispatchReadyInitializeTodoState = result.current.dispatchReadyInitializeTodoState;
+    const dispatchReadyInitializeTodoState =
+      result.current.dispatchReadyInitializeTodoState;
 
     dispatchReadyInitializeTodoState();
 
@@ -110,7 +112,10 @@ describe('useTodoStateService', () => {
     dispatchTodoItemCreated({ text: 'newTodoNote' });
 
     expect(todosUpdatedMock).toBeCalledTimes(1);
-    expect(todosUpdatedMock).toBeCalledWith([...todos, { ...newTodo, id: maxTodoNoteId + 1 }]);
+    expect(todosUpdatedMock).toBeCalledWith([
+      ...todos,
+      { ...newTodo, id: maxTodoNoteId + 1 },
+    ]);
   });
 
   it('dispatchTodoItemEdited should call expected function with expected value', () => {
@@ -122,7 +127,11 @@ describe('useTodoStateService', () => {
     dispatchTodoItemEdited(updatedTodo);
 
     expect(todosUpdatedMock).toBeCalledTimes(1);
-    expect(todosUpdatedMock).toBeCalledWith([ todoNote1, updatedTodo, todoNote3 ]);
+    expect(todosUpdatedMock).toBeCalledWith([
+      todoNote1,
+      updatedTodo,
+      todoNote3,
+    ]);
   });
 
   it('dispatchTodoItemDeleted should call expected function with expected value', () => {
@@ -134,23 +143,28 @@ describe('useTodoStateService', () => {
     dispatchTodoItemDeleted(deletedTodoNotedId!);
 
     expect(todosUpdatedMock).toBeCalledTimes(1);
-    expect(todosUpdatedMock).toBeCalledWith([ todoNote1, todoNote3 ]);
+    expect(todosUpdatedMock).toBeCalledWith([todoNote1, todoNote3]);
   });
 
   it('dispatchCompletedTodosDeleted should call expected function with expected value', () => {
     const { result } = renderHook(useTodoStateService);
 
-    const dispatchCompletedTodosDeleted = result.current.dispatchCompletedTodosDeleted;
+    const dispatchCompletedTodosDeleted =
+      result.current.dispatchCompletedTodosDeleted;
 
     dispatchCompletedTodosDeleted();
 
     expect(todosUpdatedMock).toBeCalledTimes(1);
-    expect(todosUpdatedMock).toBeCalledWith([ todoNote2, todoNote3 ]);
+    expect(todosUpdatedMock).toBeCalledWith([todoNote2, todoNote3]);
   });
 
   it('when filter value is All todos should have expected value', () => {
     useAppSelectorMock.mockImplementation((fn) => {
-      const state: RootState = initState(todos, filterTypes.All, appInitialized); 
+      const state: RootState = initState(
+        todos,
+        filterTypes.All,
+        appInitialized
+      );
 
       return fn(state);
     });
@@ -165,7 +179,11 @@ describe('useTodoStateService', () => {
 
   it('when filter value is Active todos should have expected value', async () => {
     useAppSelectorMock.mockImplementation((fn) => {
-      const state: RootState = initState(todos, filterTypes.Active, appInitialized); 
+      const state: RootState = initState(
+        todos,
+        filterTypes.Active,
+        appInitialized
+      );
 
       return fn(state);
     });
@@ -179,7 +197,11 @@ describe('useTodoStateService', () => {
 
   it('when filter value is Completed todos should have expected value', () => {
     useAppSelectorMock.mockImplementation((fn) => {
-      const state: RootState = initState(todos, filterTypes.Completed, appInitialized); 
+      const state: RootState = initState(
+        todos,
+        filterTypes.Completed,
+        appInitialized
+      );
 
       return fn(state);
     });
@@ -190,5 +212,4 @@ describe('useTodoStateService', () => {
 
     expect(filteredTodos).toEqual([todoNote1]);
   });
-
 });

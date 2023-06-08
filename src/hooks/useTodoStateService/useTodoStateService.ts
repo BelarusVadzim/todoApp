@@ -7,7 +7,7 @@ import { getMaxTodoId } from './utils';
 
 const useTodoStateService = () => {
   const appDispatch = useAppDispatch();
-  
+
   const allTodos = useAppSelector((state) => state.todo.todos);
 
   const dispatchReadyInitializeTodoState = () => {
@@ -19,7 +19,7 @@ const useTodoStateService = () => {
   };
 
   const dispatchTodoItemCreated = (note: TodoNote) => {
-    const id =  getMaxTodoId(allTodos) + 1;
+    const id = getMaxTodoId(allTodos) + 1;
 
     const newTodo: TodoNote = { ...note, id };
     const updatedTodos = [...allTodos, newTodo];
@@ -29,22 +29,20 @@ const useTodoStateService = () => {
 
   const dispatchTodoItemEdited = (todoItem: TodoNote) => {
     const updatedTodos = allTodos.map((x) =>
-      x.id === todoItem.id 
-        ? todoItem 
-        : x,
+      x.id === todoItem.id ? todoItem : x
     );
-    
+
     dispatchTodoListChanged(updatedTodos);
   };
 
   const dispatchTodoItemDeleted = (todoItemId: number) => {
-    const updatedTodos = allTodos.filter(x => x.id !== todoItemId);
+    const updatedTodos = allTodos.filter((x) => x.id !== todoItemId);
 
     dispatchTodoListChanged(updatedTodos);
   };
 
   const dispatchCompletedTodosDeleted = () => {
-    const updatedTodos = allTodos.filter(x => !x.done);
+    const updatedTodos = allTodos.filter((x) => !x.done);
 
     dispatchTodoListChanged(updatedTodos);
   };
@@ -52,12 +50,12 @@ const useTodoStateService = () => {
   const todos = useAppSelector((state) => {
     const filter = state.application.filter;
     switch (filter) {
-    case filterTypes.Active:
-      return allTodos.filter((x) => !x.done);
-    case filterTypes.Completed:
-      return allTodos.filter((x) => x.done);
-    default:
-      return allTodos;
+      case filterTypes.Active:
+        return allTodos.filter((x) => !x.done);
+      case filterTypes.Completed:
+        return allTodos.filter((x) => x.done);
+      default:
+        return allTodos;
     }
   });
 

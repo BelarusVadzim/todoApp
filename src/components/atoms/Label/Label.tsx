@@ -4,10 +4,10 @@ import style from './Label.module.scss';
 import { PropsWithClassName } from 'types';
 
 type LabelProps = PropsWithChildren &
-PropsWithClassName & {
-  lineThrough?: boolean;
-  draggable?: boolean;
-};
+  PropsWithClassName & {
+    lineThrough?: boolean;
+    draggable?: boolean;
+  };
 
 const Label: React.FC<LabelProps> = ({
   children,

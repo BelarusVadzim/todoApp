@@ -1,7 +1,9 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-css-modules"
+    "stylelint-config-css-modules",
+    "./node_modules/prettier-stylelint/config.js",
+    "stylelint-config-prettier"
   ],
   "rules": {
     "selector-class-pattern": [
@@ -12,5 +14,6 @@
 	],
   "import-notation" : "string"
   },
-  "customSyntax": "postcss-scss"
+  "customSyntax": "postcss-scss",
+  "plugins": ["stylelint-prettier"]
 }

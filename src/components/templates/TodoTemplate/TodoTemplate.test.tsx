@@ -9,7 +9,7 @@ jest.mock('./TodoTemplate.module.scss', () => ({
 }));
 
 jest.mock('components/organisms', () => ({
-  TodoList: jest.fn(() => (<div>TodoList</div>)),
+  TodoList: jest.fn(() => <div>TodoList</div>),
 }));
 
 describe('<TodoTemplate />', () => {

@@ -3,7 +3,10 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["airbnb-typescript"],
+  "extends": [
+    "airbnb-typescript", 
+    "plugin:prettier/recommended"
+  ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -11,12 +14,14 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "import"],
+  "plugins": [
+    "react", 
+    "@typescript-eslint", 
+    "import", 
+    "prettier"
+  ],
   "rules": {
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "windows"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
+    "prettier/prettier": "warn",
     "react/prop-types": "off",
     "import/no-extraneous-dependencies": [
       "error",
@@ -31,18 +36,6 @@
         "optionalDependencies": false
       }
     ],
-    "max-len": [
-      "error",
-      {
-        "code": 100,
-        "tabWidth": 2,
-        "ignoreComments": true, //"comments": 80
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true
-      }
-    ],
-    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn"
   }
 }

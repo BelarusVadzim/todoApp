@@ -7,8 +7,5 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.(css|less|scss)$': 'babel-jest',
   },
-  coveragePathIgnorePatterns: [
-    '.*__snapshots__/.*',
-    '.index\\.ts',
-  ],
+  coveragePathIgnorePatterns: ['.*__snapshots__/.*', '.index\\.ts'],
 };

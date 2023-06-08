@@ -12,7 +12,6 @@ const data = JSON.stringify(todos);
 
 // jest.spyOn(Storage.prototype, 'getItem');
 
-
 describe('getTodos', () => {
   it('should return expected value', async () => {
     Storage.prototype.getItem = jest.fn(() => data);

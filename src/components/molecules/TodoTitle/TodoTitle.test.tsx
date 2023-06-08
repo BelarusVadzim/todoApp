@@ -6,9 +6,8 @@ jest.mock('./TodoListFooter.module.scss', () => ({
 }));
 
 jest.mock('components/atoms', () => ({
-  Title: jest.fn(({ children }) =>  {
-    return (
-      <div>{children}</div>);
+  Title: jest.fn(({ children }) => {
+    return <div>{children}</div>;
   }),
 }));
 
@@ -20,7 +19,7 @@ describe('<TodoTitle />', () => {
   });
 
   it('when className specified should render properly', () => {
-    const component = render(<TodoTitle className='testClassName' />);
+    const component = render(<TodoTitle className="testClassName" />);
 
     expect(component.asFragment()).toMatchSnapshot();
   });

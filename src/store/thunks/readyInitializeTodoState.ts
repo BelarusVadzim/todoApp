@@ -7,5 +7,5 @@ export const readyInitializeTodoState = createAsyncThunk(
     console.log('getTodos thunk');
 
     return todoDbService.getTodos();
-  },
+  }
 );

@@ -6,9 +6,8 @@ jest.mock('./TodoListFooter.module.scss', () => ({
 }));
 
 jest.mock('components/atoms', () => ({
-  Label: jest.fn(({ className, children }) =>  {
-    return (
-      <div className={className}>{children}</div>);
+  Label: jest.fn(({ className, children }) => {
+    return <div className={className}>{children}</div>;
   }),
 }));
 

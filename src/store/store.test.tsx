@@ -39,13 +39,13 @@ describe('store', () => {
     getTodosMock.mockReturnValueOnce(Promise.resolve(todonotes));
 
     const readyInitializeTodoStateResult = await store.dispatch(
-      readyInitializeTodoState(),
+      readyInitializeTodoState()
     );
 
     const todos = readyInitializeTodoStateResult.payload as TodoNote[];
 
     expect(readyInitializeTodoStateResult.type).toBe(
-      'todos/getTodos/fulfilled',
+      'todos/getTodos/fulfilled'
     );
     expect(todos).toEqual(todonotes);
 

@@ -6,8 +6,8 @@ const dispatchTodoListChanged = jest.fn();
 let shouldCancelStartValue: boolean;
 const todo1 = { text: 'todo1' };
 const todo2 = { text: 'todo2' };
-const todos: TodoNote[] = [ todo1, todo2];
-const sortedTodos: TodoNote[] = [ todo2, todo1 ];
+const todos: TodoNote[] = [todo1, todo2];
+const sortedTodos: TodoNote[] = [todo2, todo1];
 const todoFilter = 'todoFilter';
 
 jest.mock('./ScrolableSection.module.scss', () => ({
@@ -27,16 +27,22 @@ jest.mock('array-move', () => ({
 }));
 
 jest.mock('../SortableSection', () => ({
-  SortableSection: jest.fn(({ onSortEnd, shouldCancelStart }) =>  {
+  SortableSection: jest.fn(({ onSortEnd, shouldCancelStart }) => {
     const onClickHandler = () => {
-      shouldCancelStartValue = shouldCancelStart({ 
-        target: { 
+      shouldCancelStartValue = shouldCancelStart({
+        target: {
           getAttribute: () => true,
-        }, 
+        },
       });
     };
-    
-    return (<div data-testid="sortable-section" onDrop={onSortEnd} onClick={onClickHandler} />);
+
+    return (
+      <div
+        data-testid="sortable-section"
+        onDrop={onSortEnd}
+        onClick={onClickHandler}
+      />
+    );
   }),
 }));
 

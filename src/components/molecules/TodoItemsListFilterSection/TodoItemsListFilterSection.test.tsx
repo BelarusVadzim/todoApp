@@ -8,14 +8,12 @@ jest.mock('./TodoItemsListFilterSection.module.scss', () => ({
 }));
 
 jest.mock('hooks', () => ({
-  useRadioGroup: () => ([ createNewRadioButton ]),
-}),
-);
+  useRadioGroup: () => [createNewRadioButton],
+}));
 
 jest.mock('components/atoms', () => ({
-  RadioButton: jest.fn(({ className, children }) =>  {
-    return (
-      <div className={className}>{children}</div>);
+  RadioButton: jest.fn(({ className, children }) => {
+    return <div className={className}>{children}</div>;
   }),
 }));
 
@@ -25,7 +23,9 @@ afterEach(() => {
 
 describe('<TodoItemsListFilterSection />', () => {
   it('should render properly', () => {
-    const component = render(<TodoItemsListFilterSection className='mockClassName' />);
+    const component = render(
+      <TodoItemsListFilterSection className="mockClassName" />
+    );
 
     expect(component.asFragment()).toMatchSnapshot();
   });

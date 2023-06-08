@@ -3,8 +3,9 @@ import { useAppStateService } from 'hooks';
 import { useEffect } from 'react';
 
 const useRadioGroup = (groupName: string) => {
-  const { dispatchFilterChanged, todoFilter, isAppInitialized } = useAppStateService();
-  
+  const { dispatchFilterChanged, todoFilter, isAppInitialized } =
+    useAppStateService();
+
   const onChange = (value: string) => {
     dispatchFilterChanged(value);
   };
@@ -13,10 +14,13 @@ const useRadioGroup = (groupName: string) => {
   let filter = '';
 
   useEffect(() => {
-    if (!isAppInitialized) dispatchFilterChanged(filter); 
+    if (!isAppInitialized) dispatchFilterChanged(filter);
   }, [dispatchFilterChanged, isAppInitialized, filter]);
 
-  const createNewRadioButton = (value: string, selected?: boolean): RadioButtonProps => {
+  const createNewRadioButton = (
+    value: string,
+    selected?: boolean
+  ): RadioButtonProps => {
     const id = newId.toString();
     newId++;
 

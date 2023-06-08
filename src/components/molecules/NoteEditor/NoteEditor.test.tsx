@@ -25,14 +25,14 @@ type MockTextboxProps = {
 };
 
 jest.mock('components/atoms', () => ({
-  Textbox: jest.fn(({ onReturn, test }: MockTextboxProps) =>  {
+  Textbox: jest.fn(({ onReturn, test }: MockTextboxProps) => {
     const onChangeHandler = (arg: ChangeEvent<HTMLInputElement>) => {
       if (onReturn) {
         onReturn(arg.target.value);
       }
     };
 
-    return (<input type="text" onChange={onChangeHandler} id={test}/>);
+    return <input type="text" onChange={onChangeHandler} id={test} />;
   }),
 }));
 

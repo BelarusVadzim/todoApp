@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import TodoPage from './TodoPage';
 
 jest.mock('components/templates', () => ({
-  TodoTemplate: jest.fn(() => (<div>TodoTemplate</div>)),
+  TodoTemplate: jest.fn(() => <div>TodoTemplate</div>),
 }));
 
 describe('<TodoPage />', () => {

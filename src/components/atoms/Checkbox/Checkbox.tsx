@@ -12,12 +12,13 @@ const Checkbox: React.FC<CheckboxProps> = ({
   onToggle,
   className,
 }) => {
-
   const materialIconName = checked ? 'check_circle' : 'radio_button_unchecked';
-  let combinedClassName = checked 
-    ? style.checkboxChecked 
+  let combinedClassName = checked
+    ? style.checkboxChecked
     : style.checkboxUnchecked;
-  combinedClassName = className ? `${combinedClassName} ${className}` : combinedClassName;
+  combinedClassName = className
+    ? `${combinedClassName} ${className}`
+    : combinedClassName;
 
   return (
     <div className={`material-icons ${combinedClassName}`} onClick={onToggle}>

@@ -14,7 +14,7 @@ describe('<RadioButton />', () => {
     const component = render(
       <RadioButton className="className" groupName={groupName} value={value}>
         LabelChild
-      </RadioButton>,
+      </RadioButton>
     );
     expect(component.asFragment()).toMatchSnapshot();
   });
@@ -28,7 +28,7 @@ describe('<RadioButton />', () => {
         value={value}
       >
         radioButtonText
-      </RadioButton>,
+      </RadioButton>
     );
 
     const inputElement = screen.getByDisplayValue(value);

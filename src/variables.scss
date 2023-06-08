@@ -5,7 +5,7 @@ $secondary-font-color: rgb(158 156 156);
 $inactive-color: rgb(205 205 205);
 $container-color: white;
 
-$main-font: "comic sans ms";
+$main-font: 'comic sans ms';
 $font-size: 1.5rem;
 $todo-item-height: 2rem;
 $todo-list-top: 3rem;
@@ -14,7 +14,7 @@ $todo-list-min-width: 20rem;
 $todo-list-height: 100vh;
 $item-border-color: $inactive-color;
 
-$scrolableSection-max-height: calc(100vh - $todo-item-height*11);
+$scrolableSection-max-height: calc(100vh - $todo-item-height * 11);
 $noteEditor-height: 3rem;
 $todoTtitle-height: 4rem;
 $todoTtitle-font-size: 3rem;

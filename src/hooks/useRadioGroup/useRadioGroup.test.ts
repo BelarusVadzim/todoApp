@@ -9,9 +9,9 @@ let useAppStateServiceMock: jest.Mock;
 jest.mock('hooks', () => {
   useAppStateServiceMock = jest.fn();
 
-  return ({
+  return {
     useAppStateService: useAppStateServiceMock,
-  });
+  };
 });
 
 afterEach(() => {
@@ -20,7 +20,6 @@ afterEach(() => {
 
 describe('useRadioGroup', () => {
   it('should returnexpected value', async () => {
-
     const hookResult = {
       isAppInitialized: false,
       dispatchFilterChanged,
@@ -40,7 +39,7 @@ describe('useRadioGroup', () => {
 
     const newRadioButtonProps = createNewRadioButton(
       radiobuttonValue,
-      isRadiobuttonSelected,
+      isRadiobuttonSelected
     );
     const expected = {
       onChange,
@@ -50,7 +49,9 @@ describe('useRadioGroup', () => {
       selectedValue: todoFilter,
     };
 
-    expect(JSON.stringify(newRadioButtonProps)).toEqual(JSON.stringify(expected));
+    expect(JSON.stringify(newRadioButtonProps)).toEqual(
+      JSON.stringify(expected)
+    );
   });
 
   it('when call onChange should call expected functions with expected values', async () => {
@@ -71,7 +72,7 @@ describe('useRadioGroup', () => {
 
     const { onChange } = createNewRadioButton(
       radiobuttonValue,
-      isRadiobuttonSelected,
+      isRadiobuttonSelected
     );
 
     expect(onChange).toBeTruthy();

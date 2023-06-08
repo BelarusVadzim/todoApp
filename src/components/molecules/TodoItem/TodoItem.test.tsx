@@ -25,24 +25,35 @@ jest.mock('hooks', () => ({
 }));
 
 jest.mock('components/atoms', () => ({
-  Button: jest.fn(({ value, className, onClick }) =>  {
+  Button: jest.fn(({ value, className, onClick }) => {
     return (
-      <div data-testid={deleteButtonTestId}  className={className} onClick={onClick}>
+      <div
+        data-testid={deleteButtonTestId}
+        className={className}
+        onClick={onClick}
+      >
         {value}
-      </div>);
+      </div>
+    );
   }),
-  Checkbox: jest.fn(({ checked, className, onToggle }) =>  {
+  Checkbox: jest.fn(({ checked, className, onToggle }) => {
     return (
-      <div data-testid={checkboxTestId} className={className} onClick={onToggle}>
+      <div
+        data-testid={checkboxTestId}
+        className={className}
+        onClick={onToggle}
+      >
         {checked}
-      </div>);
+      </div>
+    );
   }),
-  Label: jest.fn(({ draggable, lineThrough, className }) =>  {
+  Label: jest.fn(({ draggable, lineThrough, className }) => {
     return (
-      <div data-testid={labelTestId}  className={className}>
-        <div>draggable: {draggable}</div> 
+      <div data-testid={labelTestId} className={className}>
+        <div>draggable: {draggable}</div>
         <div>lineThrough: {lineThrough}</div>
-      </div>);
+      </div>
+    );
   }),
 }));
 
@@ -58,19 +69,23 @@ describe('<TodoItem />', () => {
   });
 
   it('when todo done should render properly', () => {
-    const component = render(<TodoItem note={{ text: 'todoItemText', done: true }} />);
+    const component = render(
+      <TodoItem note={{ text: 'todoItemText', done: true }} />
+    );
 
     expect(component.asFragment()).toMatchSnapshot();
   });
 
   it('when delete button click should call expected functions with expected values', () => {
     const todoNoteId = 1;
-    render(<TodoItem note={{ text: 'todoItemText', done: true, id: todoNoteId }} />);
+    render(
+      <TodoItem note={{ text: 'todoItemText', done: true, id: todoNoteId }} />
+    );
 
     const inputElement = screen.getByTestId(deleteButtonTestId);
 
     userEvent.click(inputElement);
-    
+
     expect(dispatchTodoItemDeleted).toBeCalledTimes(1);
     expect(dispatchTodoItemDeleted).toBeCalledWith(todoNoteId);
   });
@@ -82,8 +97,11 @@ describe('<TodoItem />', () => {
     const inputElement = screen.getByTestId(checkboxTestId);
 
     userEvent.click(inputElement);
-    
+
     expect(dispatchTodoItemEdited).toBeCalledTimes(1);
-    expect(dispatchTodoItemEdited).toBeCalledWith({ ...todoNote, done: !todoNote.done });
+    expect(dispatchTodoItemEdited).toBeCalledWith({
+      ...todoNote,
+      done: !todoNote.done,
+    });
   });
 });

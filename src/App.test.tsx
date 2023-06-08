@@ -15,9 +15,7 @@ jest.mock('hooks', () => ({
   }),
 }));
 
-jest.mock('components/pages', () => 
-  jest.fn(() => (<div>TodoPage</div>)),
-);
+jest.mock('components/pages', () => jest.fn(() => <div>TodoPage</div>));
 
 describe('<App />', () => {
   it('should render properly', () => {

@@ -4,13 +4,13 @@ import style from './RadioButton.module.scss';
 import { PropsWithClassName } from 'types';
 
 export type RadioButtonProps = PropsWithChildren &
-PropsWithClassName & {
-  groupName: string;
-  selectedValue?: string;
-  onChange?: (value: string) => void;
-  id?: string;
-  value: string;
-};
+  PropsWithClassName & {
+    groupName: string;
+    selectedValue?: string;
+    onChange?: (value: string) => void;
+    id?: string;
+    value: string;
+  };
 
 const RadioButton: React.FC<RadioButtonProps> = ({
   children,

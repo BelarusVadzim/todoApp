@@ -9,16 +9,14 @@ jest.mock('./TodoList.module.scss', () => ({
 }));
 
 jest.mock('components/molecules', () => ({
-  ScrolableSection: jest.fn(() => (<div>ScrolableSection</div>)),
-  TodoListFooter: jest.fn(() => (<div>TodoListFooter</div>)),
-  TodoItemsListMenu: jest.fn(() => (<div>TodoItemsListMenu</div>)),
+  ScrolableSection: jest.fn(() => <div>ScrolableSection</div>),
+  TodoListFooter: jest.fn(() => <div>TodoListFooter</div>),
+  TodoItemsListMenu: jest.fn(() => <div>TodoItemsListMenu</div>),
   NoteEditor: jest.fn(({ className }) => {
-    return (
-      <div className={className} />);
+    return <div className={className} />;
   }),
-  TodoTitle: jest.fn(({  className, children }) =>  {
-    return (
-      <div className={className}>{children}</div>);
+  TodoTitle: jest.fn(({ className, children }) => {
+    return <div className={className}>{children}</div>;
   }),
 }));
 

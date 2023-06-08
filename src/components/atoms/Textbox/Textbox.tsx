@@ -10,10 +10,11 @@ const EnterKey = 'Enter';
 const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
   const [text, setText] = useState('');
 
-  const keyDownHandler = (keyboardEventArg: KeyboardEvent<HTMLInputElement>) => {
+  const keyDownHandler = (
+    keyboardEventArg: KeyboardEvent<HTMLInputElement>
+  ) => {
     if (EnterKey === keyboardEventArg.key) {
-      if (onReturn) 
-        onReturn(keyboardEventArg.currentTarget.value);
+      if (onReturn) onReturn(keyboardEventArg.currentTarget.value);
       setText('');
     }
   };

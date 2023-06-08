@@ -6,5 +6,5 @@ export const todosUpdated = createAsyncThunk(
   'todos/setAllTodos',
   async (todoList: TodoNote[]) => {
     return todoDbService.putTodos(todoList);
-  },
+  }
 );

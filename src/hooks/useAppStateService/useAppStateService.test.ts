@@ -18,7 +18,7 @@ let appDispatchMock = jest.fn();
 jest.mock('store', () => {
   useAppDispatchMock = jest.fn(() => appDispatchMock);
   useAppSelectorMock = jest.fn((fn) => {
-    const state: RootState = { 
+    const state: RootState = {
       todo: { todos: [] },
       application: {
         appInitialized,
@@ -51,7 +51,6 @@ afterEach(() => {
 
 describe('useAppStateService', () => {
   it('dispatchFilterChanged should call expected function with expected value', async () => {
-
     const { result } = renderHook(useAppStateService);
 
     const dispatchFilterChanged = result.current.dispatchFilterChanged;

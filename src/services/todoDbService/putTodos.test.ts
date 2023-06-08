@@ -11,12 +11,12 @@ const data = JSON.stringify(todos);
 
 jest.mock('./getTodos', () => {
   return {
-    getTodos: jest.fn(()=>Promise.resolve(todos)),
+    getTodos: jest.fn(() => Promise.resolve(todos)),
   };
 });
 
 jest.spyOn(Storage.prototype, 'setItem');
-Storage.prototype.setItem = jest.fn(()=>data);
+Storage.prototype.setItem = jest.fn(() => data);
 
 describe('putTodos', () => {
   it('should return expected value', async () => {

@@ -18,9 +18,17 @@ const applicationSlice = createSlice({
   name: 'application',
   initialState,
   reducers: {
-    setFilter: (state, action: PayloadAction<string | undefined>): ApplicationState => 
-      ({ ...state, filter: action.payload }),
-    setAppInitialized: (state): ApplicationState => ({ ...state, appInitialized: true }),
+    setFilter: (
+      state,
+      action: PayloadAction<string | undefined>
+    ): ApplicationState => ({
+      ...state,
+      filter: action.payload,
+    }),
+    setAppInitialized: (state): ApplicationState => ({
+      ...state,
+      appInitialized: true,
+    }),
   },
 });
 
