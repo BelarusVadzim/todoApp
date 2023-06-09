@@ -4,14 +4,13 @@ import {
   NoteEditor,
   ScrolableSection,
   TodoListFooter,
-  TodoTitle,
   TodoItemsListMenu,
 } from 'components/molecules';
 
 const TodoList: React.FC = () => {
   return (
     <div className={style.todoList}>
-      <TodoTitle className={style.todoTtitle}>TODO</TodoTitle>
+      <h1 className={style.todoTtitle}>TODO</h1>
       <NoteEditor className={style.noteEditor} />
       <div className={style.listContainer}>
         <ScrolableSection />

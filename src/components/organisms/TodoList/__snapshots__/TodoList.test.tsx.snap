@@ -5,11 +5,11 @@ exports[`<TodoList /> should render properly 1`] = `
   <div
     class="todoListStyle"
   >
-    <div
+    <h1
       class="todoTtitleStyle"
     >
       TODO
-    </div>
+    </h1>
     <div
       class="noteEditorStyle"
     />

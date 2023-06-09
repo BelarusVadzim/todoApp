@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Button from './Button';
 
-jest.mock('./Button.module.scss', () => ({ button: 'buttonStyle' }));
+//jest.mock('./Button.module.scss', () => ({ button: 'buttonStyle' }));
 
 describe('<Button />', () => {
   it('should render properly', () => {

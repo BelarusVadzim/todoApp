@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .todoList {
   border-left: 1rem transparent solid;
@@ -14,15 +14,17 @@
 .todoTtitle {
   height: $todoTtitle-height;
   font-size: $todoTtitle-font-size;
+  color: $todo-title-color;
 }
 
 .noteEditor {
-  composes: container from "~/src/styles/container.scss";
+  composes: container from '~/src/styles/container.scss';
   height: $noteEditor-height;
   margin: 2rem 0;
 }
 
 .listContainer {
-  composes: container from "~/src/styles/container.scss";
+  composes: container from '~/src/styles/container.scss';
   position: relative;
 }
+
