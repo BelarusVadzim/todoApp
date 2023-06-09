@@ -3,18 +3,18 @@
 exports[`<TodoItemsListMenu /> should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="todoItemsListMenuStyle"
+    class="todoItemsListMenu"
   >
     <div
-      class="labelStyle"
+      class="label"
     >
       2 items left
     </div>
     <div
-      class="filterSectionStyle"
+      class="filterSection"
     />
     <div
-      class="buttonStyle"
+      class="button"
       data-testid="clear-completed-button-test-id"
     >
       Clear Completed

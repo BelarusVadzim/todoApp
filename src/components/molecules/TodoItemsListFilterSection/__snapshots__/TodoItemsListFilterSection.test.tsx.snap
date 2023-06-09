@@ -6,17 +6,17 @@ exports[`<TodoItemsListFilterSection /> should render properly 1`] = `
     class="mockClassName"
   >
     <div
-      class="radioButtonStyle"
+      class="radioButton"
     >
       All
     </div>
     <div
-      class="radioButtonStyle"
+      class="radioButton"
     >
       Active
     </div>
     <div
-      class="radioButtonStyle"
+      class="radioButton"
     >
       Completed
     </div>
@@ -30,17 +30,17 @@ exports[`<TodoItemsListFilterSection /> when className not specified should rend
     class=""
   >
     <div
-      class="radioButtonStyle"
+      class="radioButton"
     >
       All
     </div>
     <div
-      class="radioButtonStyle"
+      class="radioButton"
     >
       Active
     </div>
     <div
-      class="radioButtonStyle"
+      class="radioButton"
     >
       Completed
     </div>

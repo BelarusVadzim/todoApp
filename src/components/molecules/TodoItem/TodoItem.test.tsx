@@ -9,14 +9,6 @@ const labelTestId = 'label';
 const checkboxTestId = 'checkbox';
 const deleteButtonTestId = 'delete-button';
 
-jest.mock('./TodoItem.module.scss', () => ({
-  todoItem: 'todoItemStyle',
-  checkbox: 'checkboxStyle',
-  label: 'labelStyle',
-  labelLineThrough: 'labelLineThroughStyle',
-  closeButton: 'closeButtonStyle',
-}));
-
 jest.mock('hooks', () => ({
   useTodoStateService: () => ({
     dispatchTodoItemEdited,

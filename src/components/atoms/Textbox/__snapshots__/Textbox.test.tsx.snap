@@ -3,7 +3,7 @@
 exports[`<Textbox /> should render properly 1`] = `
 <DocumentFragment>
   <input
-    class="textboxStyle"
+    class="textbox"
     maxlength="50"
     type="text"
     value=""

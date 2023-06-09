@@ -3,10 +3,6 @@ import TodoItemsListFilterSection from './TodoItemsListFilterSection';
 
 let createNewRadioButton = jest.fn();
 
-jest.mock('./TodoItemsListFilterSection.module.scss', () => ({
-  radioButton: 'radioButtonStyle',
-}));
-
 jest.mock('hooks', () => ({
   useRadioGroup: () => [createNewRadioButton],
 }));

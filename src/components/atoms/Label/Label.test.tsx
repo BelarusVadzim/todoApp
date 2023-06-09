@@ -1,11 +1,6 @@
 import Label from './Label';
 import { render } from '@testing-library/react';
 
-jest.mock('./Label.module.scss', () => ({
-  labelLineThrough: 'labelLineThroughstyle',
-  label: 'labelStyle',
-}));
-
 describe('<Label />', () => {
   it('should render properly', () => {
     const component = render(<Label>LabelChild</Label>);

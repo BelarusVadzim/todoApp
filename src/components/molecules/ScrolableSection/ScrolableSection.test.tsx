@@ -10,10 +10,6 @@ const todos: TodoNote[] = [todo1, todo2];
 const sortedTodos: TodoNote[] = [todo2, todo1];
 const todoFilter = 'todoFilter';
 
-jest.mock('./ScrolableSection.module.scss', () => ({
-  scrolableSection: 'scrolableSectionStyle',
-}));
-
 jest.mock('hooks', () => ({
   useTodoStateService: () => ({
     dispatchTodoListChanged,

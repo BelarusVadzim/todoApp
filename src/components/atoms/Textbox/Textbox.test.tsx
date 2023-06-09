@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import Textbox from './Textbox';
 
 const textValue = 'textValue';
-jest.mock('./Textbox.module.scss', () => ({ textbox: 'textboxStyle' }));
+
 let mockSetText: jest.Mock;
 jest.mock('react', () => {
   mockSetText = jest.fn();

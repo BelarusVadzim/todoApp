@@ -3,7 +3,7 @@
 exports[`<Checkbox /> should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="material-icons checkboxUncheckedStyle"
+    class="material-icons checkboxUnchecked"
   >
     radio_button_unchecked
     <input
@@ -17,7 +17,7 @@ exports[`<Checkbox /> should render properly 1`] = `
 exports[`<Checkbox /> when checked and classname specified should render properly  1`] = `
 <DocumentFragment>
   <div
-    class="material-icons checkboxCheckedStyle extClassName"
+    class="material-icons checkboxChecked extClassName"
   >
     check_circle
     <input

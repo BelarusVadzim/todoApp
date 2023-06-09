@@ -1,8 +1,6 @@
 import { render } from '@testing-library/react';
 import Button from './Button';
 
-//jest.mock('./Button.module.scss', () => ({ button: 'buttonStyle' }));
-
 describe('<Button />', () => {
   it('should render properly', () => {
     const component = render(<Button value="buttonValue" />);
@@ -12,7 +10,7 @@ describe('<Button />', () => {
 
   it('when glyph className specified should render properly', () => {
     const component = render(
-      <Button glyph={true} value="buttonValue" className="className" />
+      <Button glyph={true} value="buttonValue" className="testClassName" />
     );
 
     expect(component.asFragment()).toMatchSnapshot();

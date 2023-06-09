@@ -5,7 +5,7 @@ module.exports = {
   collectCoverage: true,
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
-    '^.+\\.(css|less|scss)$': 'babel-jest',
+    '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
   },
   coveragePathIgnorePatterns: ['.*__snapshots__/.*', '.index\\.ts'],
 };

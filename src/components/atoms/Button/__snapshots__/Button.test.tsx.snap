@@ -3,7 +3,7 @@
 exports[`<Button /> should render properly 1`] = `
 <DocumentFragment>
   <div
-    class=" undefined"
+    class=" button"
   >
     buttonValue
   </div>
@@ -13,7 +13,7 @@ exports[`<Button /> should render properly 1`] = `
 exports[`<Button /> when glyph className specified should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="material-icons undefined className"
+    class="material-icons button testClassName"
   >
     buttonValue
   </div>

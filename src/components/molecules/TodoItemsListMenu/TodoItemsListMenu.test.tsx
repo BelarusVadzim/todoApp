@@ -9,13 +9,6 @@ const todo1 = { text: 'todo1' };
 const todo2 = { text: 'todo2' };
 const todos: TodoNote[] = [todo1, todo2];
 
-jest.mock('./TodoItemsListMenu.module.scss', () => ({
-  todoItemsListMenu: 'todoItemsListMenuStyle',
-  label: 'labelStyle',
-  filterSection: 'filterSectionStyle',
-  button: 'buttonStyle',
-}));
-
 jest.mock('hooks', () => ({
   useTodoStateService: () => ({ todos, dispatchCompletedTodosDeleted }),
 }));

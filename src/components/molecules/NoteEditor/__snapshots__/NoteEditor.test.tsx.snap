@@ -3,16 +3,16 @@
 exports[`<NoteEditor /> should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="noteEditorStyle "
+    class="noteEditor "
   >
     <div
-      class="leftFieldStyle"
+      class="leftField"
     />
     <input
       type="text"
     />
     <div
-      class="rightFieldStyle"
+      class="rightField"
     />
   </div>
 </DocumentFragment>
@@ -21,16 +21,16 @@ exports[`<NoteEditor /> should render properly 1`] = `
 exports[`<NoteEditor /> when className specified should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="noteEditorStyle extraClass"
+    class="noteEditor extraClass"
   >
     <div
-      class="leftFieldStyle"
+      class="leftField"
     />
     <input
       type="text"
     />
     <div
-      class="rightFieldStyle"
+      class="rightField"
     />
   </div>
 </DocumentFragment>

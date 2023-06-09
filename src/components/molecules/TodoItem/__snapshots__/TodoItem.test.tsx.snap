@@ -3,14 +3,14 @@
 exports[`<TodoItem /> should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="todoItemStyle"
+    class="todoItem"
   >
     <div
-      class="checkboxStyle"
+      class="checkbox"
       data-testid="checkbox"
     />
     <div
-      class="labelStyle"
+      class="label"
       data-testid="label"
     >
       <div>
@@ -21,7 +21,7 @@ exports[`<TodoItem /> should render properly 1`] = `
       </div>
     </div>
     <div
-      class="closeButtonStyle"
+      class="closeButton"
       data-testid="delete-button"
     >
       close
@@ -33,14 +33,14 @@ exports[`<TodoItem /> should render properly 1`] = `
 exports[`<TodoItem /> when todo done should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="todoItemStyle"
+    class="todoItem"
   >
     <div
-      class="checkboxStyle"
+      class="checkbox"
       data-testid="checkbox"
     />
     <div
-      class="labelLineThroughStyle"
+      class="labelLineThrough"
       data-testid="label"
     >
       <div>
@@ -51,7 +51,7 @@ exports[`<TodoItem /> when todo done should render properly 1`] = `
       </div>
     </div>
     <div
-      class="closeButtonStyle"
+      class="closeButton"
       data-testid="delete-button"
     >
       close

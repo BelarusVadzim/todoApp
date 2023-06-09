@@ -6,12 +6,6 @@ import NoteEditor from './NoteEditor';
 const dispatchTodoItemCreated = jest.fn();
 const dispatchTodoItemEdited = jest.fn();
 
-jest.mock('./NoteEditor.module.scss', () => ({
-  noteEditor: 'noteEditorStyle',
-  leftField: 'leftFieldStyle',
-  rightField: 'rightFieldStyle',
-}));
-
 jest.mock('hooks', () => ({
   useTodoStateService: () => ({
     dispatchTodoItemCreated,

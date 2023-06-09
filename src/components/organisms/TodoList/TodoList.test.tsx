@@ -1,13 +1,6 @@
 import { render } from '@testing-library/react';
 import TodoList from './TodoList';
 
-jest.mock('./TodoList.module.scss', () => ({
-  todoList: 'todoListStyle',
-  todoTtitle: 'todoTtitleStyle',
-  noteEditor: 'noteEditorStyle',
-  listContainer: 'listContainerStyle',
-}));
-
 jest.mock('components/molecules', () => ({
   ScrolableSection: jest.fn(() => <div>ScrolableSection</div>),
   TodoListFooter: jest.fn(() => <div>TodoListFooter</div>),
