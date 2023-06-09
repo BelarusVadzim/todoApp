@@ -27,14 +27,9 @@ let todosUpdatedMock: jest.Mock;
 let appDispatchMock = jest.fn();
 let getMaxTodoIdMock: jest.Mock;
 
-const initState = (
-  todoNotes: TodoNote[],
-  filterValue: string,
-  appInitializedValue: boolean
-): RootState => ({
+const initState = (todoNotes: TodoNote[], filterValue: string): RootState => ({
   todo: { todos: todoNotes },
   application: {
-    appInitialized: appInitializedValue,
     filter: filterValue,
   },
 });
@@ -51,7 +46,7 @@ jest.mock('store', () => {
   console.log('init mock');
   useAppDispatchMock = jest.fn(() => appDispatchMock);
   useAppSelectorMock = jest.fn().mockImplementation((fn) => {
-    const state = initState(todos, filter, appInitialized);
+    const state = initState(todos, filter);
 
     return fn(state);
   });
@@ -160,11 +155,7 @@ describe('useTodoStateService', () => {
 
   it('when filter value is All todos should have expected value', () => {
     useAppSelectorMock.mockImplementation((fn) => {
-      const state: RootState = initState(
-        todos,
-        filterTypes.All,
-        appInitialized
-      );
+      const state: RootState = initState(todos, filterTypes.All);
 
       return fn(state);
     });
@@ -179,11 +170,7 @@ describe('useTodoStateService', () => {
 
   it('when filter value is Active todos should have expected value', async () => {
     useAppSelectorMock.mockImplementation((fn) => {
-      const state: RootState = initState(
-        todos,
-        filterTypes.Active,
-        appInitialized
-      );
+      const state: RootState = initState(todos, filterTypes.Active);
 
       return fn(state);
     });
@@ -197,11 +184,7 @@ describe('useTodoStateService', () => {
 
   it('when filter value is Completed todos should have expected value', () => {
     useAppSelectorMock.mockImplementation((fn) => {
-      const state: RootState = initState(
-        todos,
-        filterTypes.Completed,
-        appInitialized
-      );
+      const state: RootState = initState(todos, filterTypes.Completed);
 
       return fn(state);
     });

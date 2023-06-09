@@ -1,4 +1,4 @@
-import { setAppInitialized, setFilter } from './slices/applicationSlice';
+import { setFilter } from './slices/applicationSlice';
 import store from './store';
 import { readyInitializeTodoState, todosUpdated } from './thunks';
 import { TodoNote } from 'types';
@@ -27,7 +27,6 @@ describe('store', () => {
     const applicationState = store.getState().application;
     const todoState = store.getState().todo;
 
-    expect(applicationState.appInitialized).toEqual(false);
     expect(applicationState.filter).toEqual('All');
 
     expect(todoState.todos).toEqual([]);
@@ -83,14 +82,5 @@ describe('store', () => {
 
     const state = store.getState().application;
     expect(state.filter).toEqual(filter);
-  });
-
-  it('Should be able to set appInitialized flag', async () => {
-    const setAppInitializedResult = store.dispatch(setAppInitialized());
-
-    expect(setAppInitializedResult.type).toBe('application/setAppInitialized');
-
-    const state = store.getState().application;
-    expect(state.appInitialized).toBeTruthy();
   });
 });

@@ -12,7 +12,7 @@ const TodoItemsListFilterSection: React.FC<PropsWithClassName> = ({
 }) => {
   const [createNewRadioButton] = useRadioGroup(radioGroupName);
 
-  const allRadioButtonProps = createNewRadioButton(filterTypes.All, true);
+  const allRadioButtonProps = createNewRadioButton(filterTypes.All);
   const activeRadioButtonProps = createNewRadioButton(filterTypes.Active);
   const completedRadioButtonProps = createNewRadioButton(filterTypes.Completed);
 

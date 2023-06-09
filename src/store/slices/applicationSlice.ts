@@ -1,13 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type ApplicationState = {
-  appInitialized: boolean;
   filter?: string;
 };
 
 function getInitialState(): ApplicationState {
   return {
-    appInitialized: false,
     filter: 'All',
   };
 }
@@ -25,12 +23,8 @@ const applicationSlice = createSlice({
       ...state,
       filter: action.payload,
     }),
-    setAppInitialized: (state): ApplicationState => ({
-      ...state,
-      appInitialized: true,
-    }),
   },
 });
 
-export const { setFilter, setAppInitialized } = applicationSlice.actions;
+export const { setFilter } = applicationSlice.actions;
 export default applicationSlice.reducer;

@@ -1,30 +1,19 @@
 import { RadioButtonProps } from 'components/atoms/RadioButton/RadioButton';
 import { useAppStateService } from 'hooks';
-import { useEffect } from 'react';
 
 const useRadioGroup = (groupName: string) => {
-  const { dispatchFilterChanged, todoFilter, isAppInitialized } =
-    useAppStateService();
+  const { dispatchFilterChanged, todoFilter } = useAppStateService();
 
   const onChange = (value: string) => {
+    console.log('filterChanged');
     dispatchFilterChanged(value);
   };
 
   let newId = 0;
-  let filter = '';
 
-  useEffect(() => {
-    if (!isAppInitialized) dispatchFilterChanged(filter);
-  }, [dispatchFilterChanged, isAppInitialized, filter]);
-
-  const createNewRadioButton = (
-    value: string,
-    selected?: boolean
-  ): RadioButtonProps => {
+  const createNewRadioButton = (value: string): RadioButtonProps => {
     const id = newId.toString();
     newId++;
-
-    if (selected) filter = value;
 
     return {
       onChange,

@@ -34,13 +34,9 @@ describe('useRadioGroup', () => {
       dispatchFilterChanged(value);
     };
 
-    const isRadiobuttonSelected = true;
     const radiobuttonValue = 'value';
 
-    const newRadioButtonProps = createNewRadioButton(
-      radiobuttonValue,
-      isRadiobuttonSelected
-    );
+    const newRadioButtonProps = createNewRadioButton(radiobuttonValue);
     const expected = {
       onChange,
       id: '0',
@@ -67,13 +63,9 @@ describe('useRadioGroup', () => {
     const [createNewRadioButton] = result.current;
     const filter = 'filter';
 
-    const isRadiobuttonSelected = true;
     const radiobuttonValue = 'value';
 
-    const { onChange } = createNewRadioButton(
-      radiobuttonValue,
-      isRadiobuttonSelected
-    );
+    const { onChange } = createNewRadioButton(radiobuttonValue);
 
     expect(onChange).toBeTruthy();
 

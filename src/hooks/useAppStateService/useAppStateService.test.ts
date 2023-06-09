@@ -5,7 +5,6 @@ import { RootState } from 'store';
 const setFilterResult = 'setFilterResult';
 const setAppInitializedResult = 'setAppInitializedResult';
 const filter = 'filter';
-const appInitialized = true;
 
 let useAppDispatchMock: jest.Mock;
 let useAppSelectorMock: jest.Mock;
@@ -21,7 +20,6 @@ jest.mock('store', () => {
     const state: RootState = {
       todo: { todos: [] },
       application: {
-        appInitialized,
         filter,
       },
     };
@@ -61,30 +59,11 @@ describe('useAppStateService', () => {
     expect(appDispatchMock).toBeCalledWith(setFilterResult);
   });
 
-  it('dispatchAppInitialized should call expected function with expected value', async () => {
-    const { result } = renderHook(useAppStateService);
-
-    const dispatchAppInitialized = result.current.dispatchAppInitialized;
-
-    dispatchAppInitialized();
-
-    expect(appDispatchMock).toBeCalledTimes(1);
-    expect(appDispatchMock).toBeCalledWith(setAppInitializedResult);
-  });
-
   it('todoFilter should has expected value', async () => {
     const { result } = renderHook(useAppStateService);
 
     const todoFilter = result.current.todoFilter;
 
     expect(todoFilter).toEqual(filter);
-  });
-
-  it('appInitialized should has expected value', async () => {
-    const { result } = renderHook(useAppStateService);
-
-    const todoFilter = result.current.isAppInitialized;
-
-    expect(todoFilter).toEqual(appInitialized);
   });
 });
