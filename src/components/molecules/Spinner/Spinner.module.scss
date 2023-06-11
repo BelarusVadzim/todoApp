@@ -1,0 +1,25 @@
+@import 'src/variables.scss';
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  //display: none;
+  // background-color: rgb(191, 191, 191);
+  // opacity: 0.5;
+}
+
+.overlayHidden {
+  @extend .overlay;
+
+  display: none;
+}
+
+.spinner {
+  position: absolute !important;
+  top: 30% !important;
+  left: 50% !important;
+}
+
