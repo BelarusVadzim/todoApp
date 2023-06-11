@@ -4,11 +4,12 @@ import { useAppDispatch, useAppSelector } from 'store';
 import { readyInitializeTodoState, todosUpdated } from 'store/thunks';
 import { TodoNote } from 'types';
 import { getMaxTodoId } from './utils';
+import { setFilter } from 'store/slices/todoSlice';
 
 const useTodoStateService = () => {
   const appDispatch = useAppDispatch();
 
-  const allTodos = useAppSelector((state) => state.todo.todos);
+  const allTodos = useAppSelector((state) => state.todos);
 
   const dispatchReadyInitializeTodoState = () => {
     appDispatch(readyInitializeTodoState());
@@ -48,7 +49,7 @@ const useTodoStateService = () => {
   };
 
   const todos = useAppSelector((state) => {
-    const filter = state.application.filter;
+    const filter = state.filter;
     switch (filter) {
       case filterTypes.Active:
         return allTodos.filter((x) => !x.done);
@@ -59,6 +60,18 @@ const useTodoStateService = () => {
     }
   });
 
+  const dispatchFilterChanged = (filter?: string) => {
+    appDispatch(setFilter(filter));
+  };
+
+  const todoFilter = useAppSelector((state) => {
+    return state.filter;
+  });
+
+  const pending = useAppSelector((state) => {
+    return state.pending;
+  });
+
   return {
     dispatchReadyInitializeTodoState,
     dispatchTodoListChanged,
@@ -66,7 +79,10 @@ const useTodoStateService = () => {
     dispatchTodoItemEdited,
     dispatchTodoItemDeleted,
     dispatchCompletedTodosDeleted,
+    dispatchFilterChanged,
     todos,
+    todoFilter,
+    pending,
   };
 };
 

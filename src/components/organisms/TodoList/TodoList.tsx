@@ -1,13 +1,16 @@
-import React from 'react';
 import style from './TodoList.module.scss';
 import {
   NoteEditor,
   ScrolableSection,
   TodoListFooter,
   TodoItemsListMenu,
+  Spinner,
 } from 'components/molecules';
+import { useTodoStateService } from 'hooks';
 
 const TodoList: React.FC = () => {
+  const { pending } = useTodoStateService();
+
   return (
     <div className={style.todoList}>
       <h1 className={style.todoTtitle}>TODO</h1>
@@ -16,6 +19,7 @@ const TodoList: React.FC = () => {
         <ScrolableSection />
         <TodoItemsListMenu />
       </div>
+      <Spinner visible={pending} />
       <TodoListFooter />
     </div>
   );

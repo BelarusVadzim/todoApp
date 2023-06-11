@@ -4,8 +4,14 @@ import { delayEmulator } from './delayEmulator';
 import { getTodos } from './getTodos';
 
 export const putTodos = async (todos: TodoNote[]) => {
-  localStorage.setItem(TODOS, JSON.stringify(todos));
-  await delayEmulator.sleep(100);
+  await delayEmulator.sleep(1500);
+  throw new Error(
+    `Don't worry, this is not a real exception, just a demonstration.`
+  );
 
-  return getTodos();
+  localStorage.setItem(TODOS, JSON.stringify(todos));
+
+  const updatedTodos = await getTodos();
+
+  return updatedTodos;
 };

@@ -1,4 +1,4 @@
-import { setFilter } from './slices/applicationSlice';
+import { setFilter } from './slices/todoSlice';
 import store from './store';
 import { readyInitializeTodoState, todosUpdated } from './thunks';
 import { TodoNote } from 'types';
@@ -24,8 +24,8 @@ afterEach(() => {
 
 describe('store', () => {
   it('should initially set states to default values', () => {
-    const applicationState = store.getState().application;
-    const todoState = store.getState().todo;
+    const applicationState = store.getState();
+    const todoState = store.getState();
 
     expect(applicationState.filter).toEqual('All');
 
@@ -48,7 +48,7 @@ describe('store', () => {
     );
     expect(todos).toEqual(todonotes);
 
-    const state = store.getState().todo;
+    const state = store.getState();
     expect(state).toEqual({ todos });
   });
 
@@ -60,14 +60,15 @@ describe('store', () => {
 
     putTodosMock.mockImplementationOnce((value) => value);
 
-    const todosUpdatedResult = await store.dispatch(todosUpdated(todonotes));
+    const xxx = todosUpdated(todonotes);
+    const todosUpdatedResult = await store.dispatch(xxx);
 
     const todos = todosUpdatedResult.payload as TodoNote[];
 
     expect(todosUpdatedResult.type).toBe('todos/setAllTodos/fulfilled');
     expect(todos).toEqual(todonotes);
 
-    const state = store.getState().todo;
+    const state = store.getState();
     expect(state).toEqual({ todos });
   });
 
@@ -80,7 +81,7 @@ describe('store', () => {
     expect(setFilterResult.type).toBe('application/setFilter');
     expect(filter).toEqual(filterNewValue);
 
-    const state = store.getState().application;
+    const state = store.getState();
     expect(state.filter).toEqual(filter);
   });
 });

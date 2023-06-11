@@ -1,8 +1,8 @@
 import { RadioButtonProps } from 'components/atoms/RadioButton/RadioButton';
-import { useAppStateService } from 'hooks';
+import { useTodoStateService } from 'hooks';
 
 const useRadioGroup = (groupName: string) => {
-  const { dispatchFilterChanged, todoFilter } = useAppStateService();
+  const { dispatchFilterChanged, todoFilter } = useTodoStateService();
 
   const onChange = (value: string) => {
     console.log('filterChanged');

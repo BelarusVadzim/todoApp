@@ -28,10 +28,8 @@ let appDispatchMock = jest.fn();
 let getMaxTodoIdMock: jest.Mock;
 
 const initState = (todoNotes: TodoNote[], filterValue: string): RootState => ({
-  todo: { todos: todoNotes },
-  application: {
-    filter: filterValue,
-  },
+  todos: todoNotes,
+  filter: filterValue,
 });
 
 jest.mock('./utils', () => {

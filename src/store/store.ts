@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import rootReducer from './reducers';
+import { todoReducer as todo } from './slices';
 import {
   type TypedUseSelectorHook,
   useDispatch,
@@ -8,7 +8,7 @@ import {
 } from 'react-redux';
 
 const store = configureStore({
-  reducer: { ...rootReducer },
+  reducer: todo,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
