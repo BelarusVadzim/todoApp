@@ -4,9 +4,5 @@ import { TodoNote } from 'types';
 
 export const todosUpdated = createAsyncThunk(
   'todos/setAllTodos',
-  async (todoList: TodoNote[]) => {
-    console.log('todosUpdated thunk');
-
-    return todoDbService.putTodos(todoList);
-  }
+  (todoList: TodoNote[]) => todoDbService.putTodos(todoList)
 );

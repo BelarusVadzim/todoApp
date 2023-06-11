@@ -24,6 +24,9 @@ exports[`<TodoList /> should render properly 1`] = `
       </div>
     </div>
     <div>
+      Spinner
+    </div>
+    <div>
       TodoListFooter
     </div>
   </div>

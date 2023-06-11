@@ -4,13 +4,13 @@ import useRadioGroup from './useRadioGroup';
 const groupName = 'groupName';
 const dispatchFilterChanged = jest.fn();
 let todoFilter: string = 'All';
-let useAppStateServiceMock: jest.Mock;
+let useTodoStateServiceMock: jest.Mock;
 
 jest.mock('hooks', () => {
-  useAppStateServiceMock = jest.fn();
+  useTodoStateServiceMock = jest.fn();
 
   return {
-    useAppStateService: useAppStateServiceMock,
+    useTodoStateService: useTodoStateServiceMock,
   };
 });
 
@@ -26,7 +26,7 @@ describe('useRadioGroup', () => {
       todoFilter,
     };
 
-    useAppStateServiceMock.mockReturnValueOnce(hookResult);
+    useTodoStateServiceMock.mockReturnValueOnce(hookResult);
 
     const { result } = renderHook(() => useRadioGroup(groupName));
     const [createNewRadioButton] = result.current;
@@ -57,7 +57,7 @@ describe('useRadioGroup', () => {
       todoFilter,
     };
 
-    useAppStateServiceMock.mockReturnValueOnce(hookResult);
+    useTodoStateServiceMock.mockReturnValueOnce(hookResult);
 
     const { result } = renderHook(() => useRadioGroup(groupName));
     const [createNewRadioButton] = result.current;

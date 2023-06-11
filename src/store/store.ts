@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-
 import { todoReducer as todo } from './slices';
 import {
   type TypedUseSelectorHook,

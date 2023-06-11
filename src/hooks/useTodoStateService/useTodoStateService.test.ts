@@ -5,9 +5,9 @@ import { TodoNote } from 'types';
 import { filterTypes } from 'constants/filterTypes';
 
 const todosUpdatedResult = 'todosUpdatedResult';
+const setFilterResult = 'setFilterResult';
 const readyInitializeTodoStatResult = 'readyInitializeTodoStatResult';
 const filter = 'filter';
-const appInitialized = true;
 const maxTodoNoteId = 3;
 const todoNote1: TodoNote = { id: 1, text: 'todoNote1', done: true };
 const todoNote2: TodoNote = { id: 2, text: 'todoNote2', done: false };
@@ -23,6 +23,7 @@ let useAppSelectorMock: jest.Mock;
 
 let readyInitializeTodoStateMock: jest.Mock;
 let todosUpdatedMock: jest.Mock;
+let setFilterMock: jest.Mock;
 
 let appDispatchMock = jest.fn();
 let getMaxTodoIdMock: jest.Mock;
@@ -41,7 +42,6 @@ jest.mock('./utils', () => {
 });
 
 jest.mock('store', () => {
-  console.log('init mock');
   useAppDispatchMock = jest.fn(() => appDispatchMock);
   useAppSelectorMock = jest.fn().mockImplementation((fn) => {
     const state = initState(todos, filter);
@@ -62,6 +62,14 @@ jest.mock('store/thunks', () => {
   return {
     readyInitializeTodoState: readyInitializeTodoStateMock,
     todosUpdated: todosUpdatedMock,
+  };
+});
+
+jest.mock('store/slices/todoSlice', () => {
+  setFilterMock = jest.fn(() => setFilterResult);
+
+  return {
+    setFilter: setFilterMock,
   };
 });
 
@@ -151,6 +159,21 @@ describe('useTodoStateService', () => {
     expect(todosUpdatedMock).toBeCalledWith([todoNote2, todoNote3]);
   });
 
+  it('dispatchFilterChanged should call expected function with expected value', () => {
+    const { result } = renderHook(useTodoStateService);
+    const newFilter = 'newFilter';
+
+    const dispatchFilterChanged = result.current.dispatchFilterChanged;
+
+    dispatchFilterChanged(newFilter);
+
+    expect(setFilterMock).toBeCalledTimes(1);
+    expect(setFilterMock).toBeCalledWith(newFilter);
+
+    expect(appDispatchMock).toBeCalledTimes(1);
+    expect(appDispatchMock).toBeCalledWith(setFilterResult);
+  });
+
   it('when filter value is All todos should have expected value', () => {
     useAppSelectorMock.mockImplementation((fn) => {
       const state: RootState = initState(todos, filterTypes.All);
@@ -159,7 +182,6 @@ describe('useTodoStateService', () => {
     });
 
     const { result } = renderHook(useTodoStateService);
-    console.log(result.current);
 
     let filteredTodos = result.current.todos;
 

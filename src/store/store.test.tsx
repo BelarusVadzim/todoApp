@@ -24,11 +24,9 @@ afterEach(() => {
 
 describe('store', () => {
   it('should initially set states to default values', () => {
-    const applicationState = store.getState();
     const todoState = store.getState();
 
-    expect(applicationState.filter).toEqual('All');
-
+    expect(todoState.filter).toEqual('All');
     expect(todoState.todos).toEqual([]);
   });
 
@@ -48,8 +46,8 @@ describe('store', () => {
     );
     expect(todos).toEqual(todonotes);
 
-    const state = store.getState();
-    expect(state).toEqual({ todos });
+    const state = store.getState().todos;
+    expect(state).toEqual(todos);
   });
 
   it('Should be able to update todos list', async () => {
@@ -60,16 +58,46 @@ describe('store', () => {
 
     putTodosMock.mockImplementationOnce((value) => value);
 
-    const xxx = todosUpdated(todonotes);
-    const todosUpdatedResult = await store.dispatch(xxx);
+    const todosUpdatedResult = await store.dispatch(todosUpdated(todonotes));
 
     const todos = todosUpdatedResult.payload as TodoNote[];
 
     expect(todosUpdatedResult.type).toBe('todos/setAllTodos/fulfilled');
     expect(todos).toEqual(todonotes);
 
-    const state = store.getState();
-    expect(state).toEqual({ todos });
+    const state = store.getState().todos;
+    expect(state).toEqual(todos);
+  });
+
+  it('when update rejected should restore previous state', async () => {
+    const todonotes: TodoNote[] = [
+      { text: 'todoNote1' },
+      { text: 'todoNote2' },
+    ];
+
+    putTodosMock.mockImplementationOnce((value) => value);
+
+    await store.dispatch(todosUpdated(todonotes));
+
+    const testExceptionMessage = 'test exception';
+    const newTodonotes = [{ text: 'todoNote1' }];
+
+    putTodosMock.mockImplementationOnce(() => {
+      throw new Error(testExceptionMessage);
+    });
+
+    const todosUpdatedResult = (await store.dispatch(
+      todosUpdated(newTodonotes)
+    )) as {
+      error: { message: string };
+      type: string;
+    };
+
+    expect(todosUpdatedResult.type).toBe('todos/setAllTodos/rejected');
+    expect(todosUpdatedResult.error.message).toEqual(testExceptionMessage);
+
+    const state = store.getState().todos;
+    expect(state).toEqual(todonotes);
   });
 
   it('Should be able to update filter', async () => {
@@ -78,7 +106,7 @@ describe('store', () => {
 
     const filter = setFilterResult.payload;
 
-    expect(setFilterResult.type).toBe('application/setFilter');
+    expect(setFilterResult.type).toBe('todos/setFilter');
     expect(filter).toEqual(filterNewValue);
 
     const state = store.getState();

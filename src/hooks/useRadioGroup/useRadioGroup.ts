@@ -5,7 +5,6 @@ const useRadioGroup = (groupName: string) => {
   const { dispatchFilterChanged, todoFilter } = useTodoStateService();
 
   const onChange = (value: string) => {
-    console.log('filterChanged');
     dispatchFilterChanged(value);
   };
 
