@@ -8,15 +8,9 @@ const useRadioGroup = (groupName: string) => {
     dispatchFilterChanged(value);
   };
 
-  let newId = 0;
-
   const createNewRadioButton = (value: string): RadioButtonProps => {
-    const id = newId.toString();
-    newId++;
-
     return {
       onChange,
-      id,
       groupName,
       value,
       selectedValue: todoFilter,

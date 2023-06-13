@@ -14,10 +14,14 @@ exports[`<TodoItemsListMenu /> should render properly 1`] = `
       class="filterSection"
     />
     <div
-      class="button"
-      data-testid="clear-completed-button-test-id"
+      class="buttonArea"
     >
-      Clear Completed
+      <div
+        class="button"
+        data-testid="clear-completed-button-test-id"
+      >
+        Clear Completed
+      </div>
     </div>
   </div>
 </DocumentFragment>

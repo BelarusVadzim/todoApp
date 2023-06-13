@@ -1,4 +1,4 @@
-export * from './Label';
+export * from './TextPlace';
 export * from './Button';
 export * from './Checkbox';
 export * from './RadioButton';

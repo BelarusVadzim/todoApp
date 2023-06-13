@@ -11,7 +11,7 @@ exports[`<TodoItem /> should render properly 1`] = `
     />
     <div
       class="label"
-      data-testid="label"
+      data-testid="textPLace"
     >
       <div>
         draggable: 
@@ -41,7 +41,7 @@ exports[`<TodoItem /> when todo done should render properly 1`] = `
     />
     <div
       class="labelLineThrough"
-      data-testid="label"
+      data-testid="textPLace"
     >
       <div>
         draggable: 

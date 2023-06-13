@@ -8,7 +8,6 @@ export type RadioButtonProps = PropsWithChildren &
     groupName: string;
     selectedValue?: string;
     onChange?: (value: string) => void;
-    id?: string;
     value: string;
   };
 
@@ -17,7 +16,6 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   groupName,
   selectedValue,
   onChange,
-  id,
   value,
   className = '',
 }) => {
@@ -26,9 +24,8 @@ const RadioButton: React.FC<RadioButtonProps> = ({
     onChange && onChange(val.target.value);
 
   return (
-    <label className={combinedClassName} htmlFor={id}>
+    <label className={combinedClassName}>
       <input
-        id={id}
         type="radio"
         name={groupName}
         value={value as string}

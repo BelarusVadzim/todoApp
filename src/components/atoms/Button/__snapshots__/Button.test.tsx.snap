@@ -2,20 +2,22 @@
 
 exports[`<Button /> should render properly 1`] = `
 <DocumentFragment>
-  <div
+  <button
     class=" button"
+    value="buttonValue"
   >
     buttonValue
-  </div>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`<Button /> when glyph className specified should render properly 1`] = `
 <DocumentFragment>
-  <div
+  <button
     class="material-icons button testClassName"
+    value="buttonValue"
   >
     buttonValue
-  </div>
+  </button>
 </DocumentFragment>
 `;

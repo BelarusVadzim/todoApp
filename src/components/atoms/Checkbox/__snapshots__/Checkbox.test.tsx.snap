@@ -2,29 +2,29 @@
 
 exports[`<Checkbox /> should render properly 1`] = `
 <DocumentFragment>
-  <div
+  <label
     class="material-icons checkboxUnchecked"
   >
     radio_button_unchecked
     <input
-      hidden=""
+      class="input"
       type="checkbox"
     />
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`<Checkbox /> when checked and classname specified should render properly  1`] = `
 <DocumentFragment>
-  <div
+  <label
     class="material-icons checkboxChecked extClassName"
   >
     check_circle
     <input
       checked=""
-      hidden=""
+      class="input"
       type="checkbox"
     />
-  </div>
+  </label>
 </DocumentFragment>
 `;

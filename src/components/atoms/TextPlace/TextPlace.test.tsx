@@ -1,4 +1,4 @@
-import Label from './Label';
+import Label from './TextPlace';
 import { render } from '@testing-library/react';
 
 describe('<Label />', () => {

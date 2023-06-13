@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Checkbox, Label } from 'components/atoms';
+import { Button, Checkbox, TextPlace } from 'components/atoms';
 import style from './TodoItem.module.scss';
 import { TodoNote } from 'types';
 import { useTodoStateService } from 'hooks';
@@ -14,7 +14,9 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
 
   const labelClass = note.done ? style.labelLineThrough : style.label;
   const deleteButtonClick = () => {
-    if (note.id) dispatchTodoItemDeleted(note.id);
+    if (note.id) {
+      dispatchTodoItemDeleted(note.id);
+    }
   };
   const checkBoxToggle = () =>
     dispatchTodoItemEdited({ ...note, done: !note.done });
@@ -26,9 +28,9 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
         className={style.checkbox}
         onToggle={checkBoxToggle}
       />
-      <Label draggable lineThrough={note.done} className={labelClass}>
+      <TextPlace draggable lineThrough={note.done} className={labelClass}>
         {note.text}
-      </Label>
+      </TextPlace>
       <Button
         glyph
         className={style.closeButton}

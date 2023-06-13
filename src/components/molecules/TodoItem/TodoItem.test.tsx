@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 const dispatchTodoItemEdited = jest.fn();
 const dispatchTodoItemDeleted = jest.fn();
 
-const labelTestId = 'label';
+const textPLaceTestId = 'textPLace';
 const checkboxTestId = 'checkbox';
 const deleteButtonTestId = 'delete-button';
 
@@ -39,9 +39,9 @@ jest.mock('components/atoms', () => ({
       </div>
     );
   }),
-  Label: jest.fn(({ draggable, lineThrough, className }) => {
+  TextPlace: jest.fn(({ draggable, lineThrough, className }) => {
     return (
-      <div data-testid={labelTestId} className={className}>
+      <div data-testid={textPLaceTestId} className={className}>
         <div>draggable: {draggable}</div>
         <div>lineThrough: {lineThrough}</div>
       </div>

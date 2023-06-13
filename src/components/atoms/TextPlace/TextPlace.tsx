@@ -1,15 +1,15 @@
 import React from 'react';
 import { PropsWithChildren } from 'react';
-import style from './Label.module.scss';
+import style from './TextPlace.module.scss';
 import { PropsWithClassName } from 'types';
 
-type LabelProps = PropsWithChildren &
+type TextPlaceProps = PropsWithChildren &
   PropsWithClassName & {
     lineThrough?: boolean;
     draggable?: boolean;
   };
 
-const Label: React.FC<LabelProps> = ({
+const Label: React.FC<TextPlaceProps> = ({
   children,
   lineThrough,
   className = '',

@@ -39,7 +39,6 @@ describe('useRadioGroup', () => {
     const newRadioButtonProps = createNewRadioButton(radiobuttonValue);
     const expected = {
       onChange,
-      id: '0',
       groupName,
       value: radiobuttonValue,
       selectedValue: todoFilter,

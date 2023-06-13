@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Label } from 'components/atoms';
+import { Button, TextPlace } from 'components/atoms';
 import style from './TodoItemsListMenu.module.scss';
 import { TodoItemsListFilterSection } from '../TodoItemsListFilterSection';
 import { useTodoStateService } from 'hooks';
@@ -10,13 +10,15 @@ const TodoItemsListMenu: React.FC = () => {
 
   return (
     <div className={style.todoItemsListMenu}>
-      <Label className={style.label}>{todos.length} items left</Label>
+      <TextPlace className={style.label}>{todos.length} items left</TextPlace>
       <TodoItemsListFilterSection className={style.filterSection} />
-      <Button
-        className={style.button}
-        value="Clear Completed"
-        onClick={buttonClearClick}
-      />
+      <div className={style.buttonArea}>
+        <Button
+          value="Clear Completed"
+          onClick={buttonClearClick}
+          className={style.button}
+        />
+      </div>
     </div>
   );
 };

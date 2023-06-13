@@ -14,7 +14,7 @@ jest.mock('hooks', () => ({
 }));
 
 jest.mock('components/atoms', () => ({
-  Label: jest.fn(({ className, children }) => {
+  TextPlace: jest.fn(({ className, children }) => {
     return <div className={className}>{children}</div>;
   }),
   Button: jest.fn(({ value, className, onClick }) => {

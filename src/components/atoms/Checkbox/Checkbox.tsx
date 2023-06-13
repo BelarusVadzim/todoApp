@@ -21,10 +21,15 @@ const Checkbox: React.FC<CheckboxProps> = ({
     : combinedClassName;
 
   return (
-    <div className={`material-icons ${combinedClassName}`} onClick={onToggle}>
+    <label className={`material-icons ${combinedClassName}`}>
       {materialIconName}
-      <input type="checkbox" defaultChecked={checked} hidden />
-    </div>
+      <input
+        type="checkbox"
+        className={style.input}
+        defaultChecked={checked}
+        onChange={onToggle}
+      />
+    </label>
   );
 };
 

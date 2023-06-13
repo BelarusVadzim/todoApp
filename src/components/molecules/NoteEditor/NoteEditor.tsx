@@ -15,9 +15,13 @@ const NoteEditor: React.FC<NoteEditorProps> = ({ className = '', note }) => {
     useTodoStateService();
 
   const editFinished = (text: string) => {
-    if (text)
-      if (note) dispatchTodoItemEdited({ ...note, text });
-      else dispatchTodoItemCreated({ text });
+    if (text) {
+      if (note) {
+        dispatchTodoItemEdited({ ...note, text });
+      } else {
+        dispatchTodoItemCreated({ text });
+      }
+    }
   };
 
   return (

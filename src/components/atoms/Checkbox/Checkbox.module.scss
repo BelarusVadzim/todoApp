@@ -3,8 +3,9 @@
 .checkboxBase {
   display: block !important;
   cursor: pointer;
-  font-size: $font-size !important; /* Safari */ /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  font-size: $font-size !important;
+  user-select: none;
+  border-radius: 2px;
 }
 
 .checkboxColored {
@@ -27,3 +28,10 @@
     @extend .checkboxColored;
   }
 }
+
+.input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+

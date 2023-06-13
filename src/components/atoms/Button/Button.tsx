@@ -16,15 +16,14 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   let combinedClasses = `${glyph ? 'material-icons' : ''} ${style.button}`;
 
-  //ToDo: put in separated function
   combinedClasses = className
     ? `${combinedClasses} ${className}`
     : combinedClasses;
 
   return (
-    <div onClick={onClick} className={combinedClasses}>
+    <button onClick={onClick} className={combinedClasses} value={value}>
       {value}
-    </div>
+    </button>
   );
 };
 

@@ -28,7 +28,10 @@ const todoSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(readyInitializeTodoState.fulfilled, (state, action) => {
-        state.todos = action.payload;
+        return {
+          ...state,
+          todos: action.payload,
+        };
       })
       // This case is added to instantly display changes on the UI
       .addCase(todosUpdated.pending, (state, action) => {

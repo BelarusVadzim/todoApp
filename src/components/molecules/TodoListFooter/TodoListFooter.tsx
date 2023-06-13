@@ -1,8 +1,10 @@
 import React from 'react';
-import { Label } from 'components/atoms';
+import { TextPlace } from 'components/atoms';
 import style from './TodoListFooter.module.scss';
 
 const TodoListFooter: React.FC = () => (
-  <Label className={style.todoListFooter}>Drag and drop to reorder list</Label>
+  <TextPlace className={style.todoListFooter}>
+    Drag and drop to reorder list
+  </TextPlace>
 );
 export default TodoListFooter;
