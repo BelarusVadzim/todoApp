@@ -6,6 +6,12 @@
   font-size: $font-size !important;
   user-select: none;
   border-radius: 2px;
+  outline-color: $primary-color;
+}
+
+.checkboxBase:focus-within:not(:active) {
+  outline-style: solid;
+  outline-width: 2px;
 }
 
 .checkboxColored {

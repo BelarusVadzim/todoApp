@@ -8,8 +8,10 @@
   font-size: $font-size !important;
   border: none;
   background-color: transparent;
+  outline-color: $primary-color;
 
   &:hover {
     color: rgb(80 80 80);
   }
 }
+
