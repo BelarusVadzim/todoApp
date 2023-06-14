@@ -9,13 +9,15 @@ type TextPlaceProps = PropsWithChildren &
     draggable?: boolean;
   };
 
-const Label: React.FC<TextPlaceProps> = ({
+const TextPlace: React.FC<TextPlaceProps> = ({
   children,
   lineThrough,
   className = '',
   draggable,
 }) => {
-  let combinedClassName = lineThrough ? style.labelLineThrough : style.label;
+  let combinedClassName = lineThrough
+    ? style.textPlaceLineThrough
+    : style.textPlace;
   combinedClassName = className
     ? `${combinedClassName} ${className}`
     : combinedClassName;
@@ -30,4 +32,4 @@ const Label: React.FC<TextPlaceProps> = ({
   );
 };
 
-export default Label;
+export default TextPlace;

@@ -6,7 +6,7 @@ exports[`<TodoItemsListMenu /> should render properly 1`] = `
     class="todoItemsListMenu"
   >
     <div
-      class="label"
+      class="itemsLeftLabel"
     >
       2 items left
     </div>

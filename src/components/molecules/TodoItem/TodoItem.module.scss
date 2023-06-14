@@ -1,8 +1,7 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 $active-text-color: $primary-font-color;
 $completed-text-color: $secondary-font-color;
-
 
 .todoItem {
   height: 3rem;
@@ -19,23 +18,22 @@ $completed-text-color: $secondary-font-color;
   justify-content: center;
 }
 
-.label {
+.todoItemText {
   color: $active-text-color;
   font-size: 1rem;
   display: flex !important;
-  white-space: nowrap; 
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
   align-items: center;
   flex: 1;
   cursor: move;
   mask-image: linear-gradient(to right, rgb(0 0 0 / 100%) 90%, rgb(0 0 0 / 0%));
 }
 
-.labelLineThrough {
-  text-decoration: line-through;
+.todoItemTextDone {
   color: lighten($active-text-color, 50%);
 
-  @extend .label;
+  @extend .todoItemText;
 }
 
 .closeButton {
@@ -44,5 +42,4 @@ $completed-text-color: $secondary-font-color;
   align-items: center;
   justify-content: center;
 }
-
 

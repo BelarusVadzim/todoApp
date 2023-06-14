@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TodoItemsListMenu from './TodoItemsListMenu';
+import { TodoItemsListMenu } from './TodoItemsListMenu';
 import { TodoNote } from 'types';
 import userEvent from '@testing-library/user-event';
 
@@ -14,9 +14,6 @@ jest.mock('hooks', () => ({
 }));
 
 jest.mock('components/atoms', () => ({
-  TextPlace: jest.fn(({ className, children }) => {
-    return <div className={className}>{children}</div>;
-  }),
   Button: jest.fn(({ value, className, onClick }) => {
     return (
       <div

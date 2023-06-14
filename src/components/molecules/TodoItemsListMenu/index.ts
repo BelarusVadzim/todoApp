@@ -1,3 +1,1 @@
-import TodoItemsListMenu from './TodoItemsListMenu';
-
-export { TodoItemsListMenu };
+export { TodoItemsListMenu } from './TodoItemsListMenu';

@@ -8,11 +8,13 @@ export type TodoItemProps = {
   note: TodoNote;
 };
 
-const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
+export const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
   const { dispatchTodoItemEdited, dispatchTodoItemDeleted } =
     useTodoStateService();
 
-  const labelClass = note.done ? style.labelLineThrough : style.label;
+  const todoItemTextStyle = note.done
+    ? style.todoItemTextDone
+    : style.todoItemText;
   const deleteButtonClick = () => {
     if (note.id) {
       dispatchTodoItemDeleted(note.id);
@@ -28,7 +30,11 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
         className={style.checkbox}
         onToggle={checkBoxToggle}
       />
-      <TextPlace draggable lineThrough={note.done} className={labelClass}>
+      <TextPlace
+        draggable
+        lineThrough={note.done}
+        className={todoItemTextStyle}
+      >
         {note.text}
       </TextPlace>
       <Button
@@ -40,5 +46,3 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
     </div>
   );
 };
-
-export default TodoItem;

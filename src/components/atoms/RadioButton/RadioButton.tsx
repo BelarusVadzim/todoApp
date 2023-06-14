@@ -28,7 +28,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
       <input
         type="radio"
         name={groupName}
-        value={value as string}
+        value={value}
         checked={value === selectedValue}
         onChange={inputOnChange}
       />

@@ -1,9 +1,9 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .container {
   border-radius: 5px;
   background-color: $container-color;
-  filter: drop-shadow(0 0 .3rem rgb(57 57 57));
+  filter: drop-shadow(0 0 0.3rem rgb(57 57 57));
 }
 
 * {

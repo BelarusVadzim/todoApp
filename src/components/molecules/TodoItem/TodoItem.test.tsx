@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TodoItem from './TodoItem';
+import { TodoItem } from './TodoItem';
 import userEvent from '@testing-library/user-event';
 
 const dispatchTodoItemEdited = jest.fn();

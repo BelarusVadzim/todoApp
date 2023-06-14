@@ -1,11 +1,7 @@
 @import 'src/variables.scss';
 
-$regular-textPlace-color: $secondary-font-color;
-$lineThrough-textPlace-color: $inactive-color;
-
 .textPlace {
   font-size: $font-size;
-  color: $regular-textPlace-color;
   border: none;
   font-family: $main-font;
   cursor: default;
@@ -14,7 +10,6 @@ $lineThrough-textPlace-color: $inactive-color;
 
 .textPlaceLineThrough {
   text-decoration: line-through;
-  color: lighten($lineThrough-textPlace-color, 10%);
 
   @extend .textPlace;
 }
