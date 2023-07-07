@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoItem /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="todoItem"
+  >
+    <div
+      class="checkbox"
+      data-testid="checkbox"
+    />
+    <div
+      class="todoItemText"
+      data-testid="textPLace"
+    >
+      <div>
+        draggable: 
+      </div>
+      <div>
+        lineThrough: 
+      </div>
+    </div>
+    <div
+      class="closeButton"
+      data-testid="delete-button"
+    >
+      close
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<TodoItem /> when todo done should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="todoItem"
+  >
+    <div
+      class="checkbox"
+      data-testid="checkbox"
+    />
+    <div
+      class="todoItemTextDone"
+      data-testid="textPLace"
+    >
+      <div>
+        draggable: 
+      </div>
+      <div>
+        lineThrough: 
+      </div>
+    </div>
+    <div
+      class="closeButton"
+      data-testid="delete-button"
+    >
+      close
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,13 @@
+@import 'src/variables.scss';
+
+.container {
+  border-radius: 5px;
+  background-color: $container-color;
+  filter: drop-shadow(0 0 0.3rem rgb(57 57 57));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,13 @@
+@import "src/variables.scss";
+
+.scrolableSection {
+  position: relative;
+  max-height: $scrolableSection-max-height;
+  overflow: auto;
+}
+
+.scrolableSection::-webkit-scrollbar {
+  display: none;
+}
+
+

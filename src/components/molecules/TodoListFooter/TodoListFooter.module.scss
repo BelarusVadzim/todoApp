@@ -1,0 +1,11 @@
+@import 'src/variables.scss';
+
+.todoListFooter {
+  align-items: center;
+  color: $secondary-font-color;
+  display: flex;
+  font-size: $todoListFooter-font-size;
+  justify-content: center;
+  min-height: 4rem;
+}
+

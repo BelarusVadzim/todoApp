@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Textbox /> should render properly 1`] = `
+<DocumentFragment>
+  <input
+    class="textbox"
+    maxlength="50"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;

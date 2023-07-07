@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoItemsListFilterSection /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="mockClassName"
+  >
+    <div
+      class="radioButton"
+    >
+      All
+    </div>
+    <div
+      class="radioButton"
+    >
+      Active
+    </div>
+    <div
+      class="radioButton"
+    >
+      Completed
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<TodoItemsListFilterSection /> when className not specified should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class=""
+  >
+    <div
+      class="radioButton"
+    >
+      All
+    </div>
+    <div
+      class="radioButton"
+    >
+      Active
+    </div>
+    <div
+      class="radioButton"
+    >
+      Completed
+    </div>
+  </div>
+</DocumentFragment>
+`;

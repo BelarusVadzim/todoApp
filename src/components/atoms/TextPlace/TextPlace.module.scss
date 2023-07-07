@@ -1,0 +1,16 @@
+@import 'src/variables.scss';
+
+.textPlace {
+  font-size: $font-size;
+  border: none;
+  font-family: $main-font;
+  cursor: default;
+  min-width: none;
+}
+
+.textPlaceLineThrough {
+  text-decoration: line-through;
+
+  @extend .textPlace;
+}
+

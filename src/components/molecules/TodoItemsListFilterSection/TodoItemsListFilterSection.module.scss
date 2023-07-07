@@ -1,0 +1,10 @@
+@import "src/variables.scss";
+
+.radioButton {
+  display: flex !important;
+  min-width: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: $todoItemsListMenu-font-size !important;
+  margin: 1rem 0;
+}

@@ -1,0 +1,30 @@
+@import 'src/variables.scss';
+
+.todoList {
+  border-left: 1rem transparent solid;
+  border-right: 1rem transparent solid;
+  margin: auto;
+  height: $todo-list-height;
+  max-width: $todo-list-max-width;
+  min-width: $todo-list-min-width;
+  position: relative;
+  top: $todo-list-top;
+}
+
+.todoTtitle {
+  height: $todoTtitle-height;
+  font-size: $todoTtitle-font-size;
+  color: $todo-title-color;
+}
+
+.noteEditor {
+  composes: container from '~/src/styles/container.scss';
+  height: $noteEditor-height;
+  margin: 2rem 0;
+}
+
+.listContainer {
+  composes: container from '~/src/styles/container.scss';
+  position: relative;
+}
+

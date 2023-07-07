@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoItemsListMenu /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="todoItemsListMenu"
+  >
+    <div
+      class="itemsLeftLabel"
+    >
+      2 items left
+    </div>
+    <div
+      class="filterSection"
+    />
+    <div
+      class="buttonArea"
+    >
+      <div
+        class="button"
+        data-testid="clear-completed-button-test-id"
+      >
+        Clear Completed
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextPlace /> should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="textPlace"
+  >
+    LabelChild
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<TextPlace /> when draggable lineThrough className specified should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="textPlaceLineThrough testClass"
+    data-draggable="true"
+  >
+    LabelChild
+  </div>
+</DocumentFragment>
+`;

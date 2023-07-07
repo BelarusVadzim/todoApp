@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SortableSection /> should render properly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      todo1
+    </div>
+    <div>
+      todo2
+    </div>
+  </div>
+</DocumentFragment>
+`;

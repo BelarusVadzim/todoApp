@@ -1,0 +1,45 @@
+@import 'src/variables.scss';
+
+$active-text-color: $primary-font-color;
+$completed-text-color: $secondary-font-color;
+
+.todoItem {
+  height: 3rem;
+  width: 100%;
+  vertical-align: middle;
+  display: flex;
+  border-bottom: 1px solid $item-border-color;
+}
+
+.checkbox {
+  display: flex !important;
+  min-width: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoItemText {
+  color: $active-text-color;
+  font-size: 1rem;
+  display: flex !important;
+  white-space: nowrap;
+  overflow: hidden;
+  align-items: center;
+  flex: 1;
+  cursor: move;
+  mask-image: linear-gradient(to right, rgb(0 0 0 / 100%) 90%, rgb(0 0 0 / 0%));
+}
+
+.todoItemTextDone {
+  color: lighten($active-text-color, 50%);
+
+  @extend .todoItemText;
+}
+
+.closeButton {
+  display: flex !important;
+  min-width: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+

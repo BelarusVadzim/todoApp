@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> should render properly 1`] = `
+<DocumentFragment>
+  <label
+    class="material-icons checkboxUnchecked"
+  >
+    radio_button_unchecked
+    <input
+      class="input"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`<Checkbox /> when checked and classname specified should render properly  1`] = `
+<DocumentFragment>
+  <label
+    class="material-icons checkboxChecked extClassName"
+  >
+    check_circle
+    <input
+      checked=""
+      class="input"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;

@@ -1,0 +1,43 @@
+@import 'src/variables.scss';
+
+.checkboxBase {
+  display: block !important;
+  cursor: pointer;
+  font-size: $font-size !important;
+  user-select: none;
+  border-radius: 2px;
+  outline-color: $primary-color;
+}
+
+.checkboxBase:focus-within:not(:active) {
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+.checkboxColored {
+  background: linear-gradient($primary-color, #e058ec);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checkboxChecked {
+  @extend .checkboxBase;
+  @extend .checkboxColored;
+}
+
+.checkboxUnchecked {
+  color: $inactive-color;
+
+  @extend .checkboxBase;
+
+  &:hover {
+    @extend .checkboxColored;
+  }
+}
+
+.input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+

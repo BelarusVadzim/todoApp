@@ -1,0 +1,24 @@
+@import 'src/variables.scss';
+
+$active-text-color: $primary-font-color;
+$completed-text-color: $secondary-font-color;
+$item-border-color: $inactive-color;
+
+.noteEditor {
+  height: 3rem;
+  width: 100%;
+  vertical-align: middle;
+  display: flex;
+  justify-content: start;
+}
+
+.leftField {
+  min-width: 4rem;
+  display: flex;
+}
+
+.rightField {
+  min-width: 4rem;
+  display: flex;
+}
+
